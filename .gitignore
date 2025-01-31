@@ -1,0 +1,21 @@
+# Unreal Engine gitignore
+
+# 기본적으로 제외할 폴더 및 파일
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.sln
+*.opensdf
+*.sdf
+*.pdb
+*.pdb.*
+*.obj
+*.log
+*.tmp
+*.db
+
+# Git LFS로 관리할 대용량 파일 (필요할 경우)
+*.uasset
+*.umap
