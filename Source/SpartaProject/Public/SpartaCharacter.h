@@ -6,6 +6,7 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+struct FInputActionValue;
 
 UCLASS()
 class SPARTAPROJECT_API ASpartaCharacter : public ACharacter
@@ -23,4 +24,21 @@ public:
 protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION()
+	void Move(const FInputActionValue& value); // 구조체를 복사하지 않기 위해 참조를 갖고 옴
+	UFUNCTION()
+	void StartJump(const FInputActionValue& value);
+	UFUNCTION()
+	void StopJump(const FInputActionValue& value);
+	UFUNCTION()
+	void StartSprint(const FInputActionValue& value);
+	UFUNCTION()
+	void StopSprint(const FInputActionValue& value);
+	UFUNCTION()
+	void Look(const FInputActionValue& value);
+
+private:
+	float NormalSpeed;
+	float SprintSpeedMultiplier;
+	float SprintSpeed;
 };
